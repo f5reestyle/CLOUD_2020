@@ -2,12 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from main import shape, grid
 
-#show that player n wins
+# Print that player n wins
 def win(n):
     print('{}player wins'.format(n))         
     return 0
 
-#check who wins
+# Check who wins
 def check(a):
     if np.all(a == 1):
         return win(1)
@@ -15,7 +15,7 @@ def check(a):
         return win(2)
     
 
-#check whether the game ends
+# check whether the game ends
 def isEND():
     
     # Check horizontal lines.
