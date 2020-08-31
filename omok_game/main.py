@@ -18,11 +18,11 @@ Show(grid)
 
 while True:    # play the game until someone wins.
     
-    Play(1)                 
-    Show(grid)   
-    if isEND() == 0:       
+    Play(1)        # player 1 plays      
+    Show(grid)     
+    if isEND() == 0:      
         break
     
-    Play(2)                                                     
+    Play(2)        # player 2 plays                                                
     if isEND() == 0:
         break
