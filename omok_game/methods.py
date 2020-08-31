@@ -7,15 +7,15 @@ def win(n):
     print('{}player wins'.format(n))         
     return 0
 
-# Check who wins
-def check(a):
-    if np.all(a == 1):
+# Check a single line. If a line is all 1s, then player 1 wins. The same goes for 2.
+def check(line):
+    if np.all(line == 1):
         return win(1)
-    elif np.all(a==2):
+    elif np.all(line==2):
         return win(2)
     
 
-# check whether the game ends
+# check the whole lines.
 def isEND():
     
     # Check horizontal lines.
@@ -59,7 +59,7 @@ def Play(player):
         except:
             print('Please enter something like 1 5 or 2 2')
             
-# Show the process of a game graphically 
+# Show the process of a game graphically
 def Show(grid):
     plt.title('omok-pan')
     plt.xlabel('x')
