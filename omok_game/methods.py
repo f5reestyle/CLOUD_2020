@@ -29,10 +29,8 @@ def isEND():
         for j in range(shape-4):
             if check(grid[j:j+5,i]) == 0:
                 return 0
-            
-        
+                  
     # Check diagonal lines.
-
     #  ↘ directions
     for i in range(shape-4):
         for j in range(shape-4):
@@ -77,7 +75,6 @@ def Show(grid):
           
     plt.plot(b_x,b_y, linestyle='None', markersize= 20, markerfacecolor= 'black', marker = 'o')
     plt.plot(w_x,w_y, linestyle='None', markersize= 20, markerfacecolor= 'white', marker = 'o')
-    
     
     plt.grid(color='grey',linewidth=0.7)
     plt.show()
