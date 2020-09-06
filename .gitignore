@@ -7,8 +7,10 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+..gitignore.un~
 .Python
 build/
+debug.log
 demo.py
 develop-eggs/
 dist/
