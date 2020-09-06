@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
-from crawling import GETgu, GETcity, GETlist
+from crawling import getGu, getCity, getList
 from table import Connect, CREATE, TRUNCATE, SEARCH_ADDR, INSERT_ADDR, INSERT_TANK
 import re
 
@@ -111,14 +111,14 @@ while True:
 
         TRUNCATE()
 
-        cities = GETcity()
+        cities = getCity()
         for city in cities :
-            gu_json = GETgu(city)
+            gu_json = getGu(city)
 
             gu_list = [ gu['SIGUNGU_NM'] for gu in gu_json ]
             for gu in gu_list :
                 INSERT_ADDR(city, gu)
-                results = GETlist(city,gu)
+                results = getList(city,gu)
 
                 names = FindVar(results,'var OS_NM .*;')
                 prices = FindVar(results,'var B027_P .*;')

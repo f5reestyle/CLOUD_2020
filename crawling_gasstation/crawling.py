@@ -1,24 +1,12 @@
 import requests
-from selenium import webdriver
 from bs4 import BeautifulSoup as bs
 import time
 import re
 from table import INSERT_TANK
 
-def STRtoDICT(string):
-    toDICT= dict()
-    items = string.replace(' ','').split('\n')
-    for item in items :
-        if item =='':
-            continue
-        key, var = item.split(':',1)
-        if var == '':
-            toDICT[key] = None
-        else:
-            toDICT[key] = var
-    return toDICT
 
-def GETcity():
+
+def getCity():
 
     cities = []
     
@@ -51,7 +39,7 @@ def GETcity():
 
 
     
-def GETgu(city):  
+def getGu(city):  
     data_str = f'SIDO_NM: {city}'    
     headers_str = '''Accept: */*
                 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36 Edg/84.0.522.63
@@ -66,7 +54,7 @@ def GETgu(city):
     return req.json()['result']
     
 
-def GETlist(city,gu):
+def getList(city,gu):
     
     data_str = f'''
                 BTN_DIV: os_btn
@@ -125,3 +113,15 @@ def GETlist(city,gu):
     
 
     
+def STRtoDICT(string):
+    toDICT= dict()
+    items = string.replace(' ','').split('\n')
+    for item in items :
+        if item =='':
+            continue
+        key, var = item.split(':',1)
+        if var == '':
+            toDICT[key] = None
+        else:
+            toDICT[key] = var
+    return toDICT
